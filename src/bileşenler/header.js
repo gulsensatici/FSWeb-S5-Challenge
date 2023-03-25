@@ -1,4 +1,26 @@
 const Header = (baslik, tarih, yazi) => {
+
+
+const div= document.createElement("div");
+div.classList.add("header");
+
+const date= document.createElement("span");
+date.classList.add("date");
+div.appendChild(date);
+date.textContent=tarih;
+
+
+const title= document.createElement("h1");
+div.appendChild(title);
+title.textContent=baslik;
+
+const span2= document.createElement("span");
+span2.classList.add("temp");
+div.appendChild(span2);
+span2.textContent=yazi;
+
+
+return div;
   // GÖREV 1
   // ---------------------
   // Bu fonksiyon argüman olarak `baslik`, `tarih` ve `temp` alarak aşağıdaki yapıyı döndürecek.
@@ -7,7 +29,7 @@ const Header = (baslik, tarih, yazi) => {
   //
   //  <div class="header">
   //    <span class="date">{ tarih }</span>
-  //    <h1>{ baslik }</h1>
+  //    <h1>{ baslik }</h1> 
   //    <span class="temp">{ yazi }</span>
   //  </div>
   //
@@ -23,7 +45,16 @@ const headerEkleyici = (secici) => {
 
   // İPUCU: querySelector bir string alabilir (bknz: querySelector("#wrapper")) 
   // fakat aynı zamanda bir değişken de alabilir (bknz: querySelector(secici))
+
+const secici1=document.querySelector(secici);
+secici1.appendChild(Header
+  ("Duru Ceylan",
+  "13.02.2023",
+  "tarihinde Kuşadası'nda ailemizin en küçük üyesi olarak aramıza katıldı"
+)
+
+  );
  
 }
 
-export { Header, headerEkleyici }
+export { Header, headerEkleyici };
